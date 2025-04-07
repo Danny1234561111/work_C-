@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>ConsoleApp6</id>
+    <version>1.0.0</version>
+    <authors>ConsoleApp6</authors>
+    <description>Package Description</description>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="net8.0">
+        <dependency id="Microsoft.EntityFrameworkCore" version="9.0.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.EntityFrameworkCore.Sqlite" version="9.0.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration.Json" version="9.0.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\Users\user\source\repos\ConsoleApp6\ConsoleApp6\bin\Debug\net8.0\ConsoleApp6.runtimeconfig.json" target="lib\net8.0\ConsoleApp6.runtimeconfig.json" />
+    <file src="C:\Users\user\source\repos\ConsoleApp6\ConsoleApp6\bin\Debug\net8.0\ConsoleApp6.dll" target="lib\net8.0\ConsoleApp6.dll" />
+  </files>
+</package>
