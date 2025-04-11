@@ -1,0 +1,56 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #studentList {
+            list-style-type: none; /* Убираем маркеры списка */
+            padding: 0; /* Убираем отступы */
+        }
+        li {
+            margin: 5px 0; /* Отступы между элементами списка */
+        }
+    </style>
+</head>
+<body>
+    <h1>Student List</h1>
+    <ul id="studentList"></ul>
+
+    <script>
+        const apiUrl = 'https://localhost:7276/api/students'; // Укажите базовый адрес вашего API
+
+
+        async function fetchStudents() {
+            try {
+                const response = await fetch(apiUrl);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const students = await response.json();
+                displayStudents(students);
+            } catch (error) {
+                console.error('There has been a problem with your fetch operation:', error);
+            }
+        }
+
+        function displayStudents(students) {
+            const studentList = document.getElementById('studentList');
+            students.forEach(student => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${student.studentId}: ${student.firstName} ${student.lastName}, Age: ${student.age}, Address: ${student.address}`;
+                studentList.appendChild(listItem);
+            });
+        }
+
+        // Вызываем функцию для получения студентов после загрузки страницы
+        window.onload = fetchStudents;
+    </script>
+</body>
+</html>
